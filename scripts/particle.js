@@ -15,10 +15,10 @@ export class Particle {
 		this.angle = random(0, 2 * Math.PI);
 		this.speed = random(1, 10);
 
-		this.friction = .96;
+		this.friction = 0.95;
 		this.gravity = 1;
 
-		this.hue = random(hue - 15, hue + 40);
+		this.hue = random(hue - 50, hue + 50);
 		this.brightness = random(50, 80);
 		this.alpha = 1;
 

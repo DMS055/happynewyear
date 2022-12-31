@@ -12,7 +12,7 @@ const calcDistance = (p1x, p1y, p2x, p2y) => {
 
 
 const createParticles = (x, y, particles, hue, ctx) => {
-	let particleCount = 30;
+	let particleCount = 25;
 	while (particleCount--) {
 		particles.push(new Particle(x, y, hue, ctx, particles));
 	}

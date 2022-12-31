@@ -57,7 +57,7 @@ class Firework {
 		);
 
 		if (this.distTravelled >= this.distToTarget) {
-			createParticles(this.tx, this.ty, particles, ctx, hue);
+			createParticles(this.tx, this.ty, particles, hue, ctx);
 
 			fireworks.splice(index, 1);
 		} else {
