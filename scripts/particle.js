@@ -22,9 +22,32 @@ export class Particle {
         this.brightness = random(50, 80);
         this.alpha = 1;
         this.decay = random(0.015, 0.03);
-
     }
 
-    draw(ctx) { }
-    update(index, particles) { }
+    draw(ctx) {
+        ctx.beginPath();
+        ctx.moveTo(
+            this.coordinates[this.coordinates.length - 1][0],
+            this.coordinates[this.coordinates.length - 1][1]
+        );
+        this.lineTo(this.x, this.y);
+        ctx.strokeStyle = `hsla(${this.hue}, 100%, ${this.brightness}%, ${this.alpha})`;
+
+        ctx.storke();
+    }
+
+    update(index, particles) {
+        this.coordinates.pop();
+        this.coordinates.unshift([this.x, this.y]);
+
+        this.speed *= this.friction;
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed + this.gravity;
+
+        this.alpha -= this.decay();
+
+        if (this.alpha <= this.decay) {
+            particles.splice(index, 1);   
+        }
+    }
 }

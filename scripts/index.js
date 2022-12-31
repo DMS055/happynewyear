@@ -23,7 +23,11 @@ const loop = () => {
 
     for (let i = fireworks.length; i > 0; i--) {
         fireworks[i].draw(ctx, hue);
-        fireworks[i].update()
+        fireworks[i].update(i, particles, hue, fireworks, ctx)
+    }
+
+    for (let i = particles.length; i > 0; i--) {
+        particles[i].draw(ctx);
     }
 };
 
