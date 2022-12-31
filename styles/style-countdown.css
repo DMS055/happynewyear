@@ -10,9 +10,12 @@ body {
     color: rgb(240, 240, 240);
     overflow: hidden;
     justify-content: center;
+    align-items: center;
+
 }
 
 .container {
+    margin-top: 20rem;
     z-index: 1000;
 }
  
@@ -42,4 +45,16 @@ body {
 .countdown-container span {
     font-size: 30px;
     color: rgb(233, 233, 233);
+}
+
+#text:not(.hidden){
+    text-align: center;
+    font-weight: bold;
+    font-size: 4rem;
+    color: rgb(233, 233, 233);
+    z-index: -1000;
+}
+
+.hidden {
+    visibility: hidden;
 }

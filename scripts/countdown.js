@@ -8,10 +8,18 @@ const secondsE = document.querySelector(".second");
 
 const countdown = () => {
 	// Redirection
+	const textE = document.querySelector("#text");
+	const containerE = document.querySelector(".container");
+	const timerE = document.querySelector(".timer");
+
 	const d1 = new Date(targetDate);
 	const d2 = new Date();
 
 	if (d1 < d2) {
+		containerE.classList.add("hidden");
+		timerE.classList.add("hidden");
+		textE.classList.remove("hidden");
+
 		window.location.replace("/pages/main.html");
     }
     
