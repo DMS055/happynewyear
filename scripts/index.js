@@ -1,7 +1,7 @@
-import Firework from "./firework";
-import { random } from "./utilities";
+import Firework from "./firework.js";
+import { random } from "./utilities.js";
 
-const canvas = document.querySelector('canvas');
+const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
 const iw = window.innerWidth;
@@ -17,23 +17,28 @@ const loop = () => {
     window.requestAnimationFrame(loop);
 
     hue = random(0, 360);
+
     ctx.globalCompositeOperation = 'destination-out';
+
     ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-    ctx.fillRect(0, 0, cw, ch);
+    ctx.fillRect(0, 0, iw, ih);
+
     ctx.globalCompositeOperation ='lighter';
 
-    for (let i = fireworks.length; i > 0; i--) {
-        fireworks[i].draw(ctx, hue);
-        fireworks[i].update(i, particles, hue, fireworks, ctx)
-    }
+    var i = fireworks.length;
+        while (i--) {
+            fireworks[i].draw(ctx, hue);
+            fireworks[i].update(i, particles, hue, fireworks, ctx);
+        }
 
-    for (let i = particles.length; i > 0; i--) {
-        particles[i].draw(ctx);
-        particles[i].update(i, fireworks, hue, particles, ctx);
-    }
+	var i = particles.length;
+        while (i--) {
+            particles[i].draw(ctx, hue);
+            particles[i].update(i, particles, hue, fireworks, ctx);
+        }
 
     if (tick >= timer) {
-        fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
+        fireworks.push(new Firework(iw / 2, ih, random(0, iw), random(0, ih / 2)));
         tick = 0;
     } else {
         tick++;
@@ -41,7 +46,7 @@ const loop = () => {
 };
 
 (() => {
-    canvas.width = cw;
-    canvas.height = ch;
+    canvas.width = iw;
+    canvas.height = ih;
     window.addEventListener('load', loop)
 })();

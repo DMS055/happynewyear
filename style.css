@@ -1,18 +1,18 @@
-* {
+* { 
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
-body {
+body { 
     height: 100vh;
     width: 100%;
     color: #fff;
-    background-color: #000;
+    background-color:#000; 
 }
 
-canvas {
+canvas { 
     position: fixed;
-    inset: 0;
-    pointer-events: none;
-}
+    inset: 0; 
+    pointer-events: none; }
