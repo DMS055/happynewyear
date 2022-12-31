@@ -1,4 +1,4 @@
-import { calcDistance } from "./utilities";
+import { calcDistance, createParticles } from "./utilities";
 
 class Firework {
     constructor(sx, sy, tx, ty) {
@@ -45,7 +45,13 @@ class Firework {
         this.distTravelled = calcDistance(this.sx, this.sy, this.x + vx, this.y + vy);
 
         if (this.distTravelled >= this.distToTarget) {
-            
+            createParticles(this.tx, this.ty, particles, ctx, hue);
+            fireworks.splice(index, 1);
+        } else {
+            this.x += vx;
+            this.y += vy;
         }
     }
 }
+
+export default Firework;
