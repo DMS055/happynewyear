@@ -1,3 +1,4 @@
+import Firework from "./firework";
 import { random } from "./utilities";
 
 const canvas = document.querySelector('canvas');
@@ -28,6 +29,14 @@ const loop = () => {
 
     for (let i = particles.length; i > 0; i--) {
         particles[i].draw(ctx);
+        particles[i].update(i, fireworks, hue, particles, ctx);
+    }
+
+    if (tick >= timer) {
+        fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
+        tick = 0;
+    } else {
+        tick++;
     }
 };
 
