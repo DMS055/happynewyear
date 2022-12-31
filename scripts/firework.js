@@ -33,4 +33,19 @@ class Firework {
         ctx.strokeStyle = `hsl(${hue}, 100%, ${this.brightness})%`;
         ctx.stroke();
     }
+
+    update(index, particles, hue, fireworks, ctx) {
+        this.coordinates.pop();
+        this.coordinates.unshift([this.x, this.y]);
+        
+        this.speed *= this.acc;
+        let vx =  Math.cos(this.angle) * this.speed;
+        let vy = Math.sin(this.angle) - this.speed;
+
+        this.distTravelled = calcDistance(this.sx, this.sy, this.x + vx, this.y + vy);
+
+        if (this.distTravelled >= this.distToTarget) {
+            
+        }
+    }
 }

@@ -22,7 +22,8 @@ const loop = () => {
     ctx.globalCompositeOperation ='lighter';
 
     for (let i = fireworks.length; i > 0; i--) {
-        fireworks[i].draw();
+        fireworks[i].draw(ctx, hue);
+        fireworks[i].update()
     }
 };
 
