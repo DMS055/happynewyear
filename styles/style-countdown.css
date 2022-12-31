@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    min-height: 100vh;
+    color: rgb(240, 240, 240);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.container {
+    z-index: 1000;
+}
+
+.countdown {
+    text-align: center;
+    margin-top: 14rem;
+    font-size: 3rem;
+}
+
+.timer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.time {
+    font-weight: bold;
+    padding: 1rem 2rem;
+    font-size: 3rem;
+    border: 4px solid #96a8a7;
+    border-radius: 0.5rem;
+    margin: 0 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.countdown-container span {
+    font-size: 30px;
+    color: rgb(233, 233, 233);
+}
