@@ -15,7 +15,7 @@ const countdown = () => {
 	const hours = Math.floor(totalSeconds / 3600) % 24;
 	const minutes = Math.floor(totalSeconds / 60) % 60;
 	const seconds = Math.floor(totalSeconds) % 60;
-  
+
     daysE.textContent = formatTime(days);
     hoursE.textContent = formatTime(hours);
     minutesE.textContent = formatTime(minutes);
