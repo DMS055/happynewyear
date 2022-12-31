@@ -9,5 +9,6 @@ const loop = () => {
 }
 
 (() => {
-
+    canvas.width = cw;
+    canvas.height = ch;
 })();
