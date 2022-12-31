@@ -45,8 +45,17 @@ const loop = () => {
     }
 };
 
+// Audio
+const playAudio = () => {
+	var audio = new Audio("/audio/fireworks1.mp3");
+	audio.play();
+};
+
+setInterval(playAudio, 23980);
+
+
 (() => {
-    canvas.width = iw;
-    canvas.height = ih;
-    window.addEventListener('load', loop)
+	canvas.width = iw;
+	canvas.height = ih;
+	window.addEventListener("load", loop);
 })();
